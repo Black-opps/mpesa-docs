@@ -1,4 +1,4 @@
-﻿# M-PESA Analytics Platform Documentation
+# M-PESA Analytics Platform Documentation
 
 Enterprise documentation for the 11-microservice M-PESA Analytics Platform.
 
@@ -13,10 +13,10 @@ Enterprise documentation for the 11-microservice M-PESA Analytics Platform.
 ## Platform Overview
 
 Production-grade SaaS platform for M-PESA transaction analytics with:
-- ✅ API Gateway (CORS, rate limiting, circuit breaker)
-- ✅ Authentication & Authorization (JWT)
-- ✅ Multi-tenant analytics
-- ✅ React Dashboard
+- ? API Gateway (CORS, rate limiting, circuit breaker)
+- ? Authentication & Authorization (JWT)
+- ? Multi-tenant analytics
+- ? React Dashboard
 
 ## Getting Started
 
@@ -28,13 +28,13 @@ Production-grade SaaS platform for M-PESA transaction analytics with:
 
 \\\
 docs/
-├── architecture/     # System design docs
-├── api/             # API documentation
-├── development/     # Setup guides
-├── deployment/      # Deployment strategies
-├── security/        # Security guidelines
-├── user-guide/      # End-user docs
-└── diagrams/        # Architecture diagrams
++-- architecture/     # System design docs
++-- api/             # API documentation
++-- development/     # Setup guides
++-- deployment/      # Deployment strategies
++-- security/        # Security guidelines
++-- user-guide/      # End-user docs
++-- diagrams/        # Architecture diagrams
 \\\
 
 ## License
