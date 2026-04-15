@@ -4,11 +4,11 @@ Enterprise documentation for the 11-microservice M-PESA Analytics Platform.
 
 ## Quick Links
 
-- [Architecture Overview](docs/architecture/overview.md)
-- [API Documentation](docs/api/gateway.md)
-- [Development Setup](docs/development/local-setup.md)
-- [Deployment Guide](docs/deployment/docker.md)
-- [Security Guidelines](docs/security/authentication.md)
+- [Architecture Overview](architecture/overview.md)
+- [API Documentation](api/gateway.md)
+- [Development Setup](development/local-setup.md)
+- [Deployment Guide](deployment/docker.md)
+- [Security Guidelines](security/authentication.md)
 
 ## Platform Overview
 
@@ -20,14 +20,14 @@ Production-grade SaaS platform for M-PESA transaction analytics with:
 
 ## Getting Started
 
-1. [Local Development Setup](docs/development/local-setup.md)
-2. [API Authentication](docs/security/authentication.md)
-3. [Dashboard Usage](docs/user-guide/dashboard.md)
+1. [Local Development Setup](development/local-setup.md)
+2. [API Authentication](security/authentication.md)
+3. [Dashboard Usage](user-guide/dashboard.md)
 
 ## Repository Structure
 
 \\\
-docs/
+
 +-- architecture/     # System design docs
 +-- api/             # API documentation
 +-- development/     # Setup guides
