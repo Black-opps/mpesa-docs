@@ -1,0 +1,120 @@
+site_name: M-PESA Analytics Platform
+site_description: Enterprise documentation for 11-microservice SaaS analytics platform
+site_url: https://black-opps.github.io/mpesa-docs/
+repo_url: https://github.com/Black-opps/mpesa-docs
+repo_name: Black-opps/mpesa-docs
+
+theme:
+  name: material
+  palette:
+    - scheme: dark
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mermaid2:
+      version: "10.9.5"
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - tables
+  - def_list
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Microservices: architecture/microservices.md
+      - Service Interaction: architecture/service-interaction.md
+      - Data Flow: architecture/data-flow.md
+      - Kafka Events: architecture/kafka-events.md
+      - Database Strategy: architecture/database-strategy.md
+      - Deployment Model: architecture/deployment.md
+  - API Reference:
+      - Gateway: api/gateway.md
+      - Auth Service: api/auth-service.md
+      - Tenant Service: api/tenant-service.md
+      - Analytics Service: api/analytics-service.md
+      - Payment Service: api/payment-service.md
+      - Billing Service: api/billing-service.md
+      - Parser Service: api/parser-service.md
+      - Categorizer Service: api/categorizer-service.md
+      - Cashflow Service: api/cashflow-service.md
+      - Webhook Service: api/webhook-service.md
+      - Dashboard Service: api/dashboard-service.md
+  - Deployment:
+      - Docker: deployment/docker.md
+      - Kubernetes: deployment/kubernetes.md
+      - CI/CD: deployment/ci-cd.md
+      - Production Checklist: deployment/production-checklist.md
+  - Development:
+      - Local Setup: development/local-setup.md
+      - Docker Compose: development/docker-compose.md
+      - Environment Variables: development/environment-variables.md
+      - Contributing: development/contributing.md
+  - Security:
+      - Authentication: security/authentication.md
+      - Multi-tenancy: security/multi-tenancy.md
+      - Secrets Management: security/secrets-management.md
+      - Compliance: security/compliance.md
+  - User Guide:
+      - Dashboard: user-guide/dashboard.md
+      - Uploading Statements: user-guide/uploading-statements.md
+      - Interpreting Insights: user-guide/interpreting-insights.md
+  - Diagrams: diagrams/
+  - Glossary: glossary.md
+  - Roadmap: roadmap.md
+  - Changelog: changelog.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Black-opps
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jonathan-wambugu-a7b92991/
+    - icon: fontawesome/solid/globe
+      link: https://black-opps.github.io
+
+copyright: © 2026 Black Opps | Platform Engineer | Built with MkDocs
