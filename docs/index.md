@@ -73,7 +73,10 @@ flowchart TD
     style API fill:#4ade80,stroke:#166534,stroke-width:3px,color:#000
     style Dashboard fill:#60a5fa,stroke:#1e40af,color:#000
     style Payment fill:#f87171,stroke:#991b1b,color:#000
-Platform Capabilities
+
+
+
+    Platform Capabilities
 === "🚀 Performance & Scale"
 
 Metric	Value
@@ -161,63 +164,27 @@ Technology Stack
 <div class="grid cards" markdown>
 API Layer
 
-FastAPI (Python 3.12)
-
-Pydantic v2
-
-Async/await
-
-WebSocket support
+FastAPI (Python 3.12) · Pydantic v2 · Async/await · WebSocket support
 
 Data Layer
 
-PostgreSQL (multi-tenant)
-
-Redis (caching + rate limiting)
-
-Alembic (migrations)
-
-SQLAlchemy 2.0+
+PostgreSQL (multi-tenant) · Redis (caching) · Alembic · SQLAlchemy 2.0+
 
 Message Bus
 
-Apache Kafka
-
-Event-driven architecture
-
-Async decoupling
-
-At-least-once delivery
+Apache Kafka · Event-driven · Async decoupling · At-least-once delivery
 
 Frontend
 
-React 19
-
-TypeScript
-
-Material-UI v6
-
-Recharts (visualizations)
+React 19 · TypeScript · Material-UI v6 · Recharts
 
 Container & Orchestration
 
-Docker (multi-stage builds)
-
-Docker Compose
-
-Kubernetes (Pod/Service/Ingress)
-
-Helm charts (optional)
+Docker · Docker Compose · Kubernetes · Helm charts
 
 Monitoring
 
-Prometheus client
-
-Structured logging
-
-Health check endpoints
-
-Circuit breaker metrics
+Prometheus client · Structured logging · Health checks · Circuit breaker metrics
 
 </div>
 Service Matrix
@@ -238,21 +205,15 @@ Certifications & Badges
 Oracle Cloud (OCI)
 
 ✅ Generative AI Professional (2025-2027)
-
 ✅ Multicloud Architect Professional (2025-2027)
-
 ✅ Data Science Professional (2025-2027)
-
 ✅ AI Foundations Associate (2025-2027)
 
 Amazon Web Services (AWS)
 
 ✅ Solutions Architect (Fundamentals) — Mar 2026
-
 ✅ Introduction to Cloud 101 — Dec 2025
-
 ✅ Machine Learning Foundations — Nov 2025
-
 ✅ Introduction to Generative AI — Nov 2025
 
 Other Certifications
