@@ -8,22 +8,24 @@
       
       
       
+        <link rel="canonical" href="https://black-opps.github.io/mpesa-docs/api/parser-service/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/mpesa-docs/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>M-PESA Analytics Platform</title>
+        <title>Parser Service API Documentation 📄 - M-PESA Analytics Platform</title>
       
     
     
-      <link rel="stylesheet" href="/mpesa-docs/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/mpesa-docs/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#parser-service-api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Parser Service API Documentation 📄
             
           </span>
         </div>
@@ -169,7 +176,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -261,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/architecture/overview.md" class="md-nav__link">
+      <a href="../../architecture/overview.md" class="md-nav__link">
         
   
   
@@ -306,6 +313,55 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -318,8 +374,74 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="parser-service-api-documentation">Parser Service API Documentation 📄</h1>
+<p><strong>Service Name</strong>: Statement Parser Service<br />
+<strong>Port</strong>: 8004<br />
+<strong>Responsibility</strong>: Ingesting, parsing, and normalizing raw M-PESA statements into structured transaction data.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The Parser Service is the <strong>entry point</strong> of the data ingestion pipeline. It accepts raw M-PESA statements uploaded by users, extracts transaction records, cleans the data, and publishes them to Kafka for further processing by the Categorizer Service.</p>
+<hr />
+<h2 id="key-endpoints">Key Endpoints</h2>
+<h3 id="upload-statement">Upload Statement</h3>
+<p><strong>POST</strong> <code>/api/v1/parser/upload</code></p>
+<p><strong>Request</strong>: Multipart form data with <code>file</code> field.</p>
+<p><strong>Supported Formats</strong>:</p>
+<ul>
+<li>Official M-PESA PDF statements</li>
+<li>M-PESA CSV exports</li>
+<li>Excel (.xlsx) files</li>
+</ul>
+<p><strong>Response</strong>:</p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;queued&quot;,
+  &quot;task_id&quot;: &quot;parse_7f8d9e2a&quot;,
+  &quot;transactions_extracted&quot;: 342,
+  &quot;estimated_time_seconds&quot;: 18,
+  &quot;message&quot;: &quot;File received and queued for processing&quot;
+}
+
+Processing Pipeline
+
+File upload → Parser Service
+Extract text from PDF/CSV
+Clean and normalize data
+Publish raw transactions to Kafka
+Categorizer Service consumes and categorizes them
+
+Features
+
+Supports official M-PESA PDF statements
+Robust error handling for malformed files
+Background processing with progress tracking
+Duplicate detection
+High accuracy parsing engine
+
+Future Enhancements
+
+OCR support for scanned/low-quality PDFs
+Bank statement parsing (Equity, KCB, Co-op)
+Real-time progress via WebSocket
+Bulk upload (multiple files at once)
+AI-assisted statement classification
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -356,10 +478,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/mpesa-docs/", "features": [], "search": "/mpesa-docs/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/mpesa-docs/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -8,22 +8,24 @@
       
       
       
+        <link rel="canonical" href="https://black-opps.github.io/mpesa-docs/api/billing-service/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/mpesa-docs/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>M-PESA Analytics Platform</title>
+        <title>billing-service - M-PESA Analytics Platform</title>
       
     
     
-      <link rel="stylesheet" href="/mpesa-docs/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/mpesa-docs/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#billing-service" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              billing-service
             
           </span>
         </div>
@@ -169,7 +176,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -261,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/architecture/overview.md" class="md-nav__link">
+      <a href="../../architecture/overview.md" class="md-nav__link">
         
   
   
@@ -306,6 +313,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -318,8 +327,78 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="billing-service">billing-service</h1>
+<h1 id="billing-service-api-documentation">Billing Service API Documentation 🧾</h1>
+<p><strong>Service Name</strong>: Billing Service<br />
+<strong>Port</strong>: 8008<br />
+<strong>Responsibility</strong>: Subscription management, usage metering, invoicing, and plan enforcement.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The Billing Service handles everything related to monetization — from plan management to usage tracking and invoice generation.</p>
+<hr />
+<h2 id="key-endpoints">Key Endpoints</h2>
+<h3 id="plans">Plans</h3>
+<p><strong>GET</strong> <code>/api/v1/billing/plans</code><br />
+List all available subscription plans.</p>
+<p><strong>POST</strong> <code>/api/v1/billing/plans</code><br />
+Create a new subscription plan (Admin only).</p>
+<h3 id="subscriptions">Subscriptions</h3>
+<p><strong>GET</strong> <code>/api/v1/billing/subscriptions/{tenant_id}</code><br />
+Get current subscription status for a tenant.</p>
+<p><strong>POST</strong> <code>/api/v1/billing/subscriptions/upgrade</code><br />
+Upgrade or change subscription tier.</p>
+<h3 id="usage-metering">Usage &amp; Metering</h3>
+<p><strong>POST</strong> <code>/api/v1/billing/usage/record</code><br />
+Record usage event (e.g., transactions processed, statements uploaded).</p>
+<p><strong>GET</strong> <code>/api/v1/billing/usage/{tenant_id}</code><br />
+Get current usage statistics and limits.</p>
+<h3 id="invoices">Invoices</h3>
+<p><strong>GET</strong> <code>/api/v1/billing/invoices</code><br />
+List all invoices for the current tenant.</p>
+<p><strong>GET</strong> <code>/api/v1/billing/invoices/{invoice_id}/pdf</code><br />
+Download invoice as PDF.</p>
+<hr />
+<h2 id="core-features">Core Features</h2>
+<ul>
+<li>Tiered pricing (Free, Pro, Enterprise)</li>
+<li>Usage-based billing</li>
+<li>Automatic invoice generation</li>
+<li>Grace period handling</li>
+<li>Payment status synchronization with Payment Service</li>
+<li>Feature flag enforcement per tier</li>
+</ul>
+<hr />
+<h2 id="integration-with-other-services">Integration with Other Services</h2>
+<ul>
+<li>Listens to Kafka events from Analytics &amp; Parser services for usage metering</li>
+<li>Notifies Webhook Service on subscription changes</li>
+<li>Integrates with Payment Service for invoice payments</li>
+</ul>
+<hr />
+<h2 id="future-enhancements">Future Enhancements</h2>
+<ul>
+<li>Proration on plan changes</li>
+<li>Usage-based alerts</li>
+<li>Tax compliance (KRA integration)</li>
+<li>Custom enterprise plans</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -356,10 +435,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/mpesa-docs/", "features": [], "search": "/mpesa-docs/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/mpesa-docs/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

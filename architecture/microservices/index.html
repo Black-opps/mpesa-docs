@@ -8,22 +8,24 @@
       
       
       
+        <link rel="canonical" href="https://black-opps.github.io/mpesa-docs/architecture/microservices/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/mpesa-docs/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>M-PESA Analytics Platform</title>
+        <title>microservices - M-PESA Analytics Platform</title>
       
     
     
-      <link rel="stylesheet" href="/mpesa-docs/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/mpesa-docs/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#microservices" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              microservices
             
           </span>
         </div>
@@ -169,7 +176,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -261,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/architecture/overview.md" class="md-nav__link">
+      <a href="../overview.md" class="md-nav__link">
         
   
   
@@ -306,6 +313,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -318,8 +327,88 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="microservices">microservices</h1>
+<h1 id="microservices-breakdown">Microservices Breakdown 🧩</h1>
+<p>Detailed overview of all 11 microservices in the M-PESA Analytics Platform.</p>
+<hr />
+<h2 id="1-api-gateway-port-9000">1. API Gateway (Port 9000)</h2>
+<p><strong>Role</strong>: Central entry point and Backend-for-Frontend (BFF)<br />
+<strong>Key Features</strong>: JWT validation, circuit breaker, rate limiting, request tracing, data aggregation<br />
+<strong>Tech</strong>: FastAPI + httpx</p>
+<hr />
+<h2 id="2-auth-service-port-8001">2. Auth Service (Port 8001)</h2>
+<p><strong>Role</strong>: User authentication and authorization<br />
+<strong>Key Features</strong>: JWT issuance, login, RBAC, password management<br />
+<strong>Tech</strong>: FastAPI, JWT (PyJWT/jose), SQLAlchemy</p>
+<hr />
+<h2 id="3-tenant-service-port-8002">3. Tenant Service (Port 8002)</h2>
+<p><strong>Role</strong>: Multi-tenancy management<br />
+<strong>Key Features</strong>: Tenant CRUD, user invitations, feature flags, isolation strategy<br />
+<strong>Tech</strong>: FastAPI, PostgreSQL schemas</p>
+<hr />
+<h2 id="4-payment-service-port-8007">4. Payment Service (Port 8007)</h2>
+<p><strong>Role</strong>: M-PESA payment processing<br />
+<strong>Key Features</strong>: STK Push, callbacks, B2C, transaction status, reconciliation<br />
+<strong>Tech</strong>: FastAPI, M-PESA Daraja API</p>
+<hr />
+<h2 id="5-billing-service-port-8008">5. Billing Service (Port 8008)</h2>
+<p><strong>Role</strong>: Subscription and invoicing<br />
+<strong>Key Features</strong>: Plans, usage metering, invoices, tier enforcement<br />
+<strong>Tech</strong>: FastAPI, Kafka consumer</p>
+<hr />
+<h2 id="6-parser-service-port-8004">6. Parser Service (Port 8004)</h2>
+<p><strong>Role</strong>: Raw statement ingestion<br />
+<strong>Key Features</strong>: PDF/CSV parsing, data cleaning, Kafka publishing<br />
+<strong>Tech</strong>: FastAPI, pdfplumber / pandas</p>
+<hr />
+<h2 id="7-categorizer-service-port-8009">7. Categorizer Service (Port 8009)</h2>
+<p><strong>Role</strong>: Transaction categorization<br />
+<strong>Key Features</strong>: Rule engine, confidence scoring, ML-ready<br />
+<strong>Tech</strong>: FastAPI, Kafka consumer/producer</p>
+<hr />
+<h2 id="8-analytics-service-port-8000">8. Analytics Service (Port 8000)</h2>
+<p><strong>Role</strong>: Business intelligence &amp; reporting<br />
+<strong>Key Features</strong>: Summaries, trends, customer analytics, insights<br />
+<strong>Tech</strong>: FastAPI, SQLAlchemy</p>
+<hr />
+<h2 id="9-cashflow-service-port-8005">9. Cashflow Service (Port 8005)</h2>
+<p><strong>Role</strong>: Cashflow intelligence<br />
+<strong>Key Features</strong>: Forecasting, trends, liquidity analysis<br />
+<strong>Tech</strong>: FastAPI, advanced queries + ML (future)</p>
+<hr />
+<h2 id="10-webhook-service-port-8010">10. Webhook Service (Port 8010)</h2>
+<p><strong>Role</strong>: Outbound event delivery<br />
+<strong>Key Features</strong>: Reliable webhook delivery, retries, dead letter queue<br />
+<strong>Tech</strong>: FastAPI, background tasks</p>
+<hr />
+<h2 id="11-dashboard-react-port-3000">11. Dashboard (React - Port 3000)</h2>
+<p><strong>Role</strong>: User interface<br />
+<strong>Key Features</strong>: Modern UI, real-time updates, data visualization<br />
+<strong>Tech</strong>: React + TypeScript + TanStack Query</p>
+<hr />
+<h2 id="communication-pattern">Communication Pattern</h2>
+<ul>
+<li><strong>Synchronous</strong>: Via API Gateway (HTTP)</li>
+<li><strong>Asynchronous</strong>: Via Kafka events</li>
+<li><strong>Internal</strong>: Direct service-to-service only when necessary (rare)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -356,10 +445,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/mpesa-docs/", "features": [], "search": "/mpesa-docs/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/mpesa-docs/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

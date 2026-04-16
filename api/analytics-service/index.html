@@ -8,22 +8,24 @@
       
       
       
+        <link rel="canonical" href="https://black-opps.github.io/mpesa-docs/api/analytics-service/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/mpesa-docs/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>M-PESA Analytics Platform</title>
+        <title>analytics-service - M-PESA Analytics Platform</title>
       
     
     
-      <link rel="stylesheet" href="/mpesa-docs/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/mpesa-docs/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#analytics-service" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-header__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              analytics-service
             
           </span>
         </div>
@@ -169,7 +176,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mpesa-docs/." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
+    <a href="../.." title="M-PESA Analytics Platform" class="md-nav__button md-logo" aria-label="M-PESA Analytics Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -261,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mpesa-docs/architecture/overview.md" class="md-nav__link">
+      <a href="../../architecture/overview.md" class="md-nav__link">
         
   
   
@@ -306,6 +313,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -318,8 +327,69 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="analytics-service">analytics-service</h1>
+<h1 id="analytics-service-api-documentation">Analytics Service API Documentation 📊</h1>
+<p><strong>Service Name</strong>: Analytics Service<br />
+<strong>Port</strong>: 8000<br />
+<strong>Responsibility</strong>: Processing, aggregating, and serving business intelligence from transaction data.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The Analytics Service is the <strong>intelligence engine</strong> of the M-PESA platform. It consumes categorized transactions and provides summaries, insights, trends, and reports to the dashboard.</p>
+<hr />
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="summary-endpoints">Summary Endpoints</h3>
+<p><strong>GET</strong> <code>/api/v1/analytics/summary</code></p>
+<p>Returns key performance metrics for the current user/tenant.</p>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;total_transactions&quot;: 1247,
+  &quot;total_amount&quot;: 2847500.75,
+  &quot;average_transaction&quot;: 2283.48,
+  &quot;active_days&quot;: 28
+}
+</code></pre>
+<p>GET /api/v1/analytics/customers
+Top customers by transaction volume.
+GET /api/v1/analytics/insights
+AI-style insights and recommendations.
+GET /api/v1/analytics/transactions
+Paginated list of transactions with filters.</p>
+<p>Data Sources</p>
+<p>Raw transactions from Parser Service
+Categorized data from Categorizer Service
+Stored in PostgreSQL with user/tenant isolation</p>
+<p>Key Features</p>
+<p>Real-time aggregation
+Trend analysis (daily, weekly, monthly)
+Customer segmentation
+Anomaly detection (future)
+Export capabilities (CSV, PDF)</p>
+<p>Authentication
+All endpoints require a valid JWT token passed via:
+httpAuthorization: Bearer <token>
+The service extracts user_id and tenant_id from the token for data isolation.</p>
+<p>Future Enhancements</p>
+<p>Advanced ML-powered insights
+Predictive cashflow forecasting
+Automated report generation
+Integration with external accounting tools</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -356,10 +426,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/mpesa-docs/", "features": [], "search": "/mpesa-docs/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/mpesa-docs/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
