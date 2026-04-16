@@ -966,53 +966,53 @@ Categorizer --&gt; Kafka
 Analytics --&gt; Postgres
 Cashflow --&gt; Postgres
 Webhook --&gt; Kafka</code></pre>
-<div class="language-text highlight"><pre><span></span><code>style Gateway fill:#4ade80,stroke:#166534,stroke-width:3px
+<div class="highlight"><pre><span></span><code>style Gateway fill:#4ade80,stroke:#166534,stroke-width:3px
 style Dashboard fill:#60a5fa,stroke:#1e40af
 </code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>#Data Flow Example (Statement Upload)
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>=======
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>subgraph "API Gateway Layer (FastAPI - Port 9000)"
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    Gateway["Enterprise API Gateway&lt;br&gt;JWT Validation + Circuit Breaker&lt;br&gt;Rate Limiting + Tracing + BFF"]
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>end
-</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>subgraph "Microservices Layer"
-</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    Auth["Auth Service :8001"]
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    Tenant["Tenant Service :8002"]
-</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>    Payment["Payment Service :8007"]
-</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>    Billing["Billing Service :8008"]
-</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>    Parser["Parser Service :8004"]
-</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    Categorizer["Categorizer Service :8009"]
-</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>    Analytics["Analytics Service :8000"]
-</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>    Cashflow["Cashflow Service :8005"]
-</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>    Webhook["Webhook Service :8010"]
-</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>end
-</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>subgraph "Data Layer"
-</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>    Postgres[(PostgreSQL Multi-tenant)]
-</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>    Redis[(Redis Cache)]
-</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>    Kafka[(Kafka Event Bus)]
-</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>end
-</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>
-</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>Dashboard --&gt; Gateway
-</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>Gateway --&gt; Auth
-</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>Gateway --&gt; Tenant
-</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>Gateway --&gt; Payment
-</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>Gateway --&gt; Billing
-</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>Gateway --&gt; Parser
-</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>Gateway --&gt; Categorizer
-</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>Gateway --&gt; Analytics
-</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>Gateway --&gt; Cashflow
-</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>Gateway --&gt; Webhook
-</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a>
-</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>Parser --&gt; Kafka
-</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a>Categorizer --&gt; Kafka
-</span><span id="__span-0-41"><a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a>Analytics --&gt; Postgres
-</span><span id="__span-0-42"><a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a>Cashflow --&gt; Postgres
-</span><span id="__span-0-43"><a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a>Webhook --&gt; Kafka
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>#Data Flow Example (Statement Upload)
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>=======
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>subgraph "API Gateway Layer (FastAPI - Port 9000)"
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    Gateway["Enterprise API Gateway&lt;br&gt;JWT Validation + Circuit Breaker&lt;br&gt;Rate Limiting + Tracing + BFF"]
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>end
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>subgraph "Microservices Layer"
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    Auth["Auth Service :8001"]
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    Tenant["Tenant Service :8002"]
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>    Payment["Payment Service :8007"]
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>    Billing["Billing Service :8008"]
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>    Parser["Parser Service :8004"]
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    Categorizer["Categorizer Service :8009"]
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>    Analytics["Analytics Service :8000"]
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>    Cashflow["Cashflow Service :8005"]
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>    Webhook["Webhook Service :8010"]
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>end
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>subgraph "Data Layer"
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>    Postgres[(PostgreSQL Multi-tenant)]
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>    Redis[(Redis Cache)]
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>    Kafka[(Kafka Event Bus)]
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>end
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>Dashboard --&gt; Gateway
+<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>
+<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>Gateway --&gt; Auth
+<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>Gateway --&gt; Tenant
+<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>Gateway --&gt; Payment
+<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>Gateway --&gt; Billing
+<a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>Gateway --&gt; Parser
+<a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>Gateway --&gt; Categorizer
+<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>Gateway --&gt; Analytics
+<a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>Gateway --&gt; Cashflow
+<a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>Gateway --&gt; Webhook
+<a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a>
+<a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>Parser --&gt; Kafka
+<a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a>Categorizer --&gt; Kafka
+<a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a>Analytics --&gt; Postgres
+<a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a>Cashflow --&gt; Postgres
+<a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a>Webhook --&gt; Kafka
+</code></pre></div>
 <p>Core Design Principles
 Principle   Implementation
 Multi-Tenancy First Strong data isolation (Schema-per-tenant for Pro, Database-per-tenant for Enterprise)
@@ -1094,6 +1094,7 @@ Version: 1.0</p>
 </aside>
 </article>
 </div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
 <button class="md-top md-icon" data-md-component="top" hidden="" type="button">
@@ -1106,7 +1107,7 @@ Version: 1.0</p>
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
 <div class="md-copyright__highlight">
-      © 2026 Black Opps | Platform Engineer | Built with MkDocs
+      Copyright 2026 Black Opps | Platform Engineer | Built with MkDocs Material
     </div>
   
   
@@ -1133,7 +1134,7 @@ Version: 1.0</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 </body>
 </html>

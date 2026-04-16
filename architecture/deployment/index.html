@@ -1991,42 +1991,42 @@ Kafka + PostgreSQL + Redis</p>
 <li>Docker (optional)</li>
 </ul>
 <p>Clone repositories:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/Black-opps/mpesa-analytics-dashboard
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git clone https://github.com/Black-opps/mpesa-api-gateway
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git clone https://github.com/Black-opps/auth-service
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/Black-opps/mpesa-analytics-dashboard
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git clone https://github.com/Black-opps/mpesa-api-gateway
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git clone https://github.com/Black-opps/auth-service
+</code></pre></div>
 <p>Repeat for remaining services.</p>
 <hr />
 <h1 id="start-infrastructure">Start Infrastructure</h1>
 <p>Start PostgreSQL:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker run -p 5432:5432 postgres
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker run -p 5432:5432 postgres
+</code></pre></div>
 <p>Start Redis:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker run -p 6379:6379 redis
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker run -p 6379:6379 redis
+</code></pre></div>
 <p>Start Kafka:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose up kafka
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose up kafka
+</code></pre></div>
 <hr />
 <h1 id="start-services-recommended-order">Start Services (recommended order)</h1>
 <p>Start services in dependency order:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>auth-service
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tenant-service
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>payment-service
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>billing-service
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>parser-service
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>categorizer-service
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>analytics-service
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>cashflow-service
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>webhook-service
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>api-gateway
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>dashboard
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>auth-service
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tenant-service
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>payment-service
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>billing-service
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>parser-service
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>categorizer-service
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>analytics-service
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>cashflow-service
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>webhook-service
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>api-gateway
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>dashboard
+</code></pre></div>
 <hr />
 <h1 id="docker-compose-deployment">Docker Compose Deployment</h1>
 <p>Recommended development environment:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker compose up --build
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker compose up --build
+</code></pre></div>
 <p>Starts:</p>
 <ul>
 <li>PostgreSQL</li>
@@ -2093,38 +2093,38 @@ Kafka + PostgreSQL + Redis</p>
 <hr />
 <h1 id="production-deployment-strategy">Production Deployment Strategy</h1>
 <p>Production architecture:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Load Balancer
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>↓
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>API Gateway Cluster
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>↓
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Service Mesh
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>↓
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Microservices
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>↓
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Kafka + PostgreSQL + Redis
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Load Balancer
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>↓
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>API Gateway Cluster
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>↓
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Service Mesh
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>↓
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Microservices
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>↓
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Kafka + PostgreSQL + Redis
+</code></pre></div>
 <hr />
 <h1 id="kubernetes-deployment">Kubernetes Deployment</h1>
 <p>Each service runs as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Deployment
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Service
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ConfigMap
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Secret
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>HorizontalPodAutoscaler
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Deployment
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Service
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ConfigMap
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Secret
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>HorizontalPodAutoscaler
+</code></pre></div>
 <p>Example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl apply -f k8s/auth-service/
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl apply -f k8s/auth-service/
+</code></pre></div>
 <p>Repeat per service.</p>
 <hr />
 <h1 id="environment-variables">Environment Variables</h1>
 <p>Required variables:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>DATABASE_URL
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>REDIS_URL
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>KAFKA_BOOTSTRAP_SERVERS
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>JWT_SECRET_KEY
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>TENANT_MODE
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>DATABASE_URL
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>REDIS_URL
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>KAFKA_BOOTSTRAP_SERVERS
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>JWT_SECRET_KEY
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>TENANT_MODE
+</code></pre></div>
 <hr />
 <h1 id="observability-stack">Observability Stack</h1>
 <p>Recommended production stack:</p>
@@ -2133,14 +2133,14 @@ Grafana<br />
 Loki<br />
 OpenTelemetry</p>
 <p>Metrics exposed via:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/metrics
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/metrics
+</code></pre></div>
 <p>on each service.</p>
 <hr />
 <h1 id="scaling-strategy">Scaling Strategy</h1>
 <p>Stateless services scale horizontally:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl scale deployment analytics-service --replicas=3
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl scale deployment analytics-service --replicas=3
+</code></pre></div>
 <p>Kafka enables async pipeline scalability.</p>
 <hr />
 <h1 id="security-configuration">Security Configuration</h1>
@@ -2152,24 +2152,24 @@ Tenant isolation enforcement</p>
 <hr />
 <h1 id="recommended-production-topology">Recommended Production Topology</h1>
 <p>Minimum cluster layout:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>3 API Gateway replicas
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>2 Auth replicas
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>2 Tenant replicas
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>2 Analytics replicas
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Kafka cluster (3 brokers)
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>PostgreSQL primary + replica
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Redis cluster
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>3 API Gateway replicas
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>2 Auth replicas
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>2 Tenant replicas
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>2 Analytics replicas
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Kafka cluster (3 brokers)
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>PostgreSQL primary + replica
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Redis cluster
+</code></pre></div>
 <hr />
 <h1 id="cicd-deployment-flow">CI/CD Deployment Flow</h1>
 <p>Pipeline stages:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>lint
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>test
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>build docker images
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>push to registry
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>deploy to staging
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>deploy to production
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>lint
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>test
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>build docker images
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>push to registry
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>deploy to staging
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>deploy to production
+</code></pre></div>
 <p>GitHub Actions supported.</p>
 <hr />
 <h1 id="next-steps">Next Steps</h1>
@@ -2226,6 +2226,8 @@ deployment/ci-cd.md</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2244,7 +2246,7 @@ deployment/ci-cd.md</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      © 2026 Black Opps | Platform Engineer | Built with MkDocs
+      Copyright 2026 Black Opps | Platform Engineer | Built with MkDocs Material
     </div>
   
   
@@ -2306,7 +2308,7 @@ deployment/ci-cd.md</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
